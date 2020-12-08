@@ -1,5 +1,6 @@
 # Preact TSX Comp lib using Rollup
 
+
 ## install dependencies
 
 - preact
@@ -8,16 +9,16 @@
 - rollup-plugin-node-resolve
 - rollup-plugin-peer-deps-external
 - rollup-plugin-typescript2
+- rimraf
 
 
 ## rollup config
 
+```js
 import typescript from "rollup-plugin-typescript2";
 import commonjs from "rollup-plugin-commonjs";
 import external from "rollup-plugin-peer-deps-external";
 import resolve from "rollup-plugin-node-resolve";
-// import scss from 'rollup-plugin-scss'
-
 import pkg from "./package.json";
 
 export default {
@@ -49,10 +50,12 @@ export default {
 		commonjs()
 	]
 };
+```
 
 
 ## tsconfig.lib.ts
 
+```ts
 {
 	"compileOnSave": false,
 	"compilerOptions": {
@@ -73,7 +76,29 @@ export default {
 		"src/lib/**/*"
 	]
 }
+```
 
+
+## scss-bundle 
+
+create file scss-bundle.config.json 
+
+```js
+{
+	"bundlerOptions": {
+		"entryFile": "./src/lib/styles/style.scss",
+		"rootDir": "./src/lib/styles/",
+		"outFile": "./lib/as-comp-lib.scss"
+	}
+}
+```
+
+
+## Define Build Script
+
+```js
+"build:lib": "rimraf lib && rollup -c && npm run scss-bundle-styles",
+```
 
 ## Issuses with npm link
 
