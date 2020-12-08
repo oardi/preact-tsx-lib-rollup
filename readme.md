@@ -23,7 +23,7 @@ import pkg from "./package.json";
 
 export default {
 	input: "src/lib/index.ts",
-	external: ['preact'],
+	external: ['preact'], // add external
 	output: [
 		{
 			file: pkg.main,
