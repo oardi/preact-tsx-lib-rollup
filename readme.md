@@ -53,7 +53,9 @@ export default {
 ```
 
 
-## tsconfig.lib.ts
+## tsconfig for building lib 
+
+create a file tsconfig.lib.ts
 
 ```ts
 {
