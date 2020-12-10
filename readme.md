@@ -1,7 +1,8 @@
-# Preact TSX Comp lib using Rollup
+# Preact Component library Starter
 
+A Starter for building a Preact TSX component library using Rollup
 
-## install dependencies
+## includes
 
 - preact
 - rollup
@@ -14,7 +15,11 @@
 
 ## rollup config
 
+minimum rollup configuration
+
 ```js
+// rollup.config.js
+
 import typescript from "rollup-plugin-typescript2";
 import commonjs from "rollup-plugin-commonjs";
 import external from "rollup-plugin-peer-deps-external";
@@ -55,9 +60,11 @@ export default {
 
 ## tsconfig for building lib 
 
-create a file tsconfig.lib.ts
+Create a tsconfig.lib.ts only for building the lib
 
 ```ts
+//tsconfig.lib.ts
+
 {
 	"compileOnSave": false,
 	"compilerOptions": {
@@ -83,7 +90,7 @@ create a file tsconfig.lib.ts
 
 ## scss-bundle 
 
-create file scss-bundle.config.json 
+For providing scss instead of compiled css use scss-bundle.config.json 
 
 ```js
 {
@@ -98,9 +105,12 @@ create file scss-bundle.config.json
 
 ## Define Build Script
 
+This Script will cleanup the "lib" folder, builds the lib and compiles scss files to lib folder.
+
 ```js
-"build:lib": "rimraf lib && rollup -c && npm run scss-bundle-styles",
+"build:lib": "rimraf lib && rollup -c && npm run scss-bundle-styles"
 ```
+
 
 ## Issuses with npm link
 
