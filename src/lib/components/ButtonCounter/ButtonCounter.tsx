@@ -15,7 +15,7 @@ export const ButtonCounter = ({ name, onClicked }: IButtonCounterProps) => {
 	}
 
 	return (
-		<button onClick={() => handleClick()} className="btn btn-primary btn-custom">
+		<button onClick={() => handleClick()} className="btn btn-primary">
 			{name} - You clicked me {count} times
 		</button>
 	);

@@ -24,8 +24,10 @@ module.exports = (env, argv) => {
 
 		resolve: {
 			extensions: ['.ts', '.tsx', '.js', '.jsx'],
-			preact: path.resolve(__dirname, 'node_modules', 'preact'),
-			'preact/hooks': path.resolve(__dirname, 'node_modules', 'preact', 'hooks'),
+			alias: {
+				preact: path.resolve(__dirname, 'node_modules', 'preact'),
+				"preact/hooks": path.resolve(__dirname, 'node_modules', 'preact', 'hooks'),
+			}
 		},
 
 		module: {
